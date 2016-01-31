@@ -41,62 +41,113 @@ li a:hover {
 	src: url(../hacked/HACKED.ttf);
 
 }
-.cd-bg-video-wrapper {
-  /* hide video on mobile device */
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.cd-bg-video-wrapper video {
-  /* you won't see this element in the html, but it will be injected using js */
-  display: block;
-  min-height: 100%;
-  min-width: 100%;
-  max-width: none;
-  height: auto;
-  width: auto;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  bottom: auto;
-  right: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -o-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-.cd-hero-slider .cd-bg-video-wrapper {
-    display: block;
-  }
-@media only screen and (min-width: 1170px) {
-	.cd-full-width {
-		padding-top: 220px;
-	}
+/* ============================================================
+  BASE OVERRIDES
+
+  Use this to make sure max width of wrapper is also max
+  video width in demo 3.
+============================================================ */
+.wrapper.demo3 {
+  max-width: 1600px;
 }
 
-.cd-full-width{
+/* ============================================================
+  DEMO 3 - BACKGROUND VIDEO
+============================================================ */
+#cmn-video-demo3__container {
+  position: relative;
+  margin: 0 0 20px 0;
+  height: 300px;
+  background-color: #282828;
+  overflow: hidden;
+}
+
+#cmn-video-demo3__video {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
   z-index: 1;
-  left: 0;
+  width: 600px;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+#cmn-video-demo3__content {
+  position: absolute;
   top: 0;
-  /* this padding is used to align the text */
-  padding-top: 100px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 80px 20px;
   text-align: center;
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
+}
+#cmn-video-demo3__content h2,
+#cmn-video-demo3__content p,
+#cmn-video-demo3__content a {
+  color: #fff;
+  text-shadow: -1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+#cmn-video-demo3__content h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+}
+#cmn-video-demo3__content p {
+  margin-bottom: 40px;
+}
+#cmn-video-demo3__content a {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 20px;
+  font-family: "Roboto Slab", serif;
+  border: solid 1px #fff;
+  transition: background 0.3s, color 0.3s, text-shadow 0.3s;
+}
+#cmn-video-demo3__content a:hover {
+  background-color: #fff;
+  color: #787878;
+  text-shadow: none;
+}
+
+@media all and (min-width: 600px) {
+  #cmn-video-demo3__container {
+    height: 480px;
+  }
+
+  #cmn-video-demo3__video {
+    width: 1024px;
+  }
+
+  #cmn-video-demo3__content {
+    padding: 160px 20px;
+  }
+  #cmn-video-demo3__content h2 {
+    font-size: 42px;
+  }
+  #cmn-video-demo3__content p,
+  #cmn-video-demo3__content a {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 1024px) {
+  #cmn-video-demo3__container {
+    height: 600px;
+  }
+
+  #cmn-video-demo3__video {
+    width: 1600px;
+  }
+
+  #cmn-video-demo3__content {
+    padding: 200px 20px;
+  }
+  #cmn-video-demo3__content h2 {
+    font-size: 54px;
+  }
+  #cmn-video-demo3__content p,
+  #cmn-video-demo3__content a {
+    font-size: 24px;
+  }
 }
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{margin:0}
